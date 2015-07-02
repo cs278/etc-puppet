@@ -1,0 +1,7 @@
+#!/bin/sh
+
+mod() {
+	puppet module install --target-dir="vendor" --version="$2" "$1"
+}
+
+mod puppetlabs-stdlib "4.6.0"
