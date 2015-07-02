@@ -1,0 +1,3 @@
+#!/bin/sh
+
+puppet apply --data_binding_terminus=none --modulepath=src/modules:vendor src/manifests/$(hostname).pp
