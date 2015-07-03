@@ -22,3 +22,11 @@ dpkgdeb::package { 'atom':
   url      => 'https://atom.io/download/deb',
   checksum => '9caa44d635f506ab7c9ffb44e0cc65444736d9e3',
 }
+
+# Fonts
+package { 'fonts-inconsolata':
+  ensure => latest,
+}->
+package { 'fonts-droid':
+  ensure => latest,
+}
