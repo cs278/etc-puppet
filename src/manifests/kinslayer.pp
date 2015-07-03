@@ -30,3 +30,8 @@ package { 'fonts-inconsolata':
 package { 'fonts-droid':
   ensure => latest,
 }
+
+# Theming
+package { 'dmz-cursor-theme':
+  ensure => latest,
+}
