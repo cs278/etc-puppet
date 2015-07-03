@@ -17,3 +17,8 @@ apt::source { 'google-chrome':
 package { 'google-chrome-stable':
   ensure => latest,
 }
+
+dpkgdeb::package { 'atom':
+  url      => 'https://atom.io/download/deb',
+  checksum => '9caa44d635f506ab7c9ffb44e0cc65444736d9e3',
+}
