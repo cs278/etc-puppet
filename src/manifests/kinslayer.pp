@@ -34,4 +34,7 @@ package { 'fonts-droid':
 # Theming
 package { 'dmz-cursor-theme':
   ensure => latest,
+}->
+package { 'gtk2-engines-murrine':
+  ensure => latest,
 }
