@@ -38,3 +38,8 @@ package { 'dmz-cursor-theme':
 package { 'gtk2-engines-murrine':
   ensure => latest,
 }
+
+# PHP
+package { 'php5-cli':
+  ensure => latest,
+}
