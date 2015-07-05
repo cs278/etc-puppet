@@ -42,6 +42,9 @@ package { 'gtk2-engines-murrine':
 # Utilities
 package { 'redshift':
   ensure => latest,
+}->
+package { 'jq':
+  ensure => latest,
 }
 
 # PHP
