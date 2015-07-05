@@ -39,6 +39,11 @@ package { 'gtk2-engines-murrine':
   ensure => latest,
 }
 
+# Utilities
+package { 'redshift':
+  ensure => latest,
+}
+
 # PHP
 package { 'php5-cli':
   ensure => latest,
