@@ -45,6 +45,9 @@ package { 'redshift':
 }->
 package { 'jq':
   ensure => latest,
+}->
+package { 'realpath':
+  ensure => latest,
 }
 
 # PHP
