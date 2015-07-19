@@ -86,3 +86,17 @@ package { 'bower':
   ensure   => 'present',
   provider => 'npm',
 }
+
+# Docker
+apt::key { '36A1D7869245C8950F966E92D8576A8BA88D21E9':
+  ensure => present,
+  source => 'https://get.docker.io/gpg',
+}->
+apt::source { 'docker':
+  ensure   => present,
+  location => 'http://get.docker.com/ubuntu',
+  release  => 'docker',
+}->
+package { 'lxc-docker':
+  ensure => latest,
+}
