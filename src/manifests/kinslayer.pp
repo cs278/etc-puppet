@@ -18,9 +18,10 @@ package { 'google-chrome-stable':
   ensure => latest,
 }
 
+# Atom 1.0.2
 dpkgdeb::package { 'atom':
   url      => 'https://atom.io/download/deb',
-  checksum => '9caa44d635f506ab7c9ffb44e0cc65444736d9e3',
+  checksum => '245f8a29611b2c99e119e7fbefa577aaac4c6df8',
 }
 
 # Fonts
