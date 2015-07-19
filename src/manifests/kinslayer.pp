@@ -63,9 +63,18 @@ package { 'php5-cli':
 package { 'php5-curl':
   ensure => latest,
 }->
+package { 'php5-gd':
+  ensure => latest,
+}->
 package { 'php5-mysql':
   ensure => latest,
 }->
 package { 'php5-mysqlnd':
+  ensure => latest,
+}->
+package { 'php5-readline':
+  ensure => latest,
+}->
+package { 'php5-xdebug':
   ensure => latest,
 }
