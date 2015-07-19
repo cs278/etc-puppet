@@ -48,6 +48,12 @@ package { 'jq':
 }->
 package { 'realpath':
   ensure => latest,
+}->
+package { 'pwgen':
+  ensure => latest,
+}->
+package { 'sshfs':
+  ensure => latest,
 }
 
 # PHP
