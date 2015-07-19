@@ -78,3 +78,11 @@ package { 'php5-readline':
 package { 'php5-xdebug':
   ensure => latest,
 }
+
+# Node
+class { 'nodejs':
+}->
+package { 'bower':
+  ensure   => 'present',
+  provider => 'npm',
+}
