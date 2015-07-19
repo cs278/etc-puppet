@@ -67,9 +67,6 @@ package { 'php5-curl':
 package { 'php5-gd':
   ensure => latest,
 }->
-package { 'php5-mysql':
-  ensure => latest,
-}->
 package { 'php5-mysqlnd':
   ensure => latest,
 }->
