@@ -59,4 +59,13 @@ package { 'sshfs':
 # PHP
 package { 'php5-cli':
   ensure => latest,
+}->
+package { 'php5-curl':
+  ensure => latest,
+}->
+package { 'php5-mysql':
+  ensure => latest,
+}->
+package { 'php5-mysqlnd':
+  ensure => latest,
 }
