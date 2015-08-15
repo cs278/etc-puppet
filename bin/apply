@@ -1,3 +1,13 @@
 #!/bin/sh
 
+if ! command puppet >/dev/null 2>&1; then
+  echo "Puppet not available, installing."
+
+  apt-get install puppet -y
+fi
+
+if [ ! -d "vendor" ]; then
+  bin/deps
+fi
+
 puppet apply --data_binding_terminus=none --modulepath=src/modules:vendor src/manifests/$(hostname).pp "$@"
