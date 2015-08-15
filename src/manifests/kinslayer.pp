@@ -20,7 +20,7 @@ package { 'google-chrome-stable':
 
 # Atom 1.0.2
 dpkgdeb::package { 'atom':
-  url      => 'https://atom.io/download/deb',
+  url      => 'https://github.com/atom/atom/releases/download/v1.0.2/atom-amd64.deb',
   checksum => '245f8a29611b2c99e119e7fbefa577aaac4c6df8',
 }
 
