@@ -77,6 +77,11 @@ package { 'php5-xdebug':
   ensure => latest,
 }
 
+# MySQL
+package { 'mysql-client':
+  ensure => latest,
+}
+
 # Node
 class { 'nodejs':
 }->
