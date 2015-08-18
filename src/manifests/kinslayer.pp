@@ -90,6 +90,20 @@ package { 'bower':
   provider => 'npm',
 }
 
+# HHVM
+apt::key { '36AEF64D0207E7EEE352D4875A16E7281BE7A449':
+  ensure => present,
+  source => 'http://dl.hhvm.com/conf/hhvm.gpg.key',
+}->
+apt::source { 'hhvm':
+  ensure   => present,
+  location => join(['http://dl.hhvm.com/', downcase($::lsbdistid)], ''),
+  release  => $::lsbdistcodename,
+}->
+package { 'hhvm':
+  ensure => latest,
+}
+
 # Docker
 apt::key { '36A1D7869245C8950F966E92D8576A8BA88D21E9':
   ensure => present,
