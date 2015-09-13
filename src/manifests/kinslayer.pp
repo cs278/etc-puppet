@@ -18,10 +18,10 @@ package { 'google-chrome-stable':
   ensure => latest,
 }
 
-# Atom 1.0.7
+# Atom 1.0.11
 dpkgdeb::package { 'atom':
-  url      => 'https://github.com/atom/atom/releases/download/v1.0.7/atom-amd64.deb',
-  checksum => '8f3232b8c95a68b9bcbee498699d4c60ef5ed409',
+  url      => 'https://github.com/atom/atom/releases/download/v1.0.11/atom-amd64.deb',
+  checksum => '96f0f5acd5834bf9894268d81eefbd9e3c34c142',
 }
 
 # Fonts
