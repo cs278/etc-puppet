@@ -44,6 +44,9 @@ package { 'gtk2-engines-murrine':
 pacakge { 'htop':
   ensure => latest,
 }->
+package { 'lm-sensors':
+  ensure => latest,
+}->
 package { 'redshift':
   ensure => latest,
 }->
