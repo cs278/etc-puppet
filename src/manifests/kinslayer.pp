@@ -41,6 +41,9 @@ package { 'gtk2-engines-murrine':
 }
 
 # Utilities
+pacakge { 'htop':
+  ensure => latest,
+}->
 package { 'redshift':
   ensure => latest,
 }->
