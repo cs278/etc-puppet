@@ -41,7 +41,7 @@ package { 'gtk2-engines-murrine':
 }
 
 # Utilities
-pacakge { 'htop':
+package { 'htop':
   ensure => latest,
 }->
 package { 'lm-sensors':
