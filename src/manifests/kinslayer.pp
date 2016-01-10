@@ -146,15 +146,21 @@ package { 'hhvm':
 }
 
 # Docker
-apt::key { '36A1D7869245C8950F966E92D8576A8BA88D21E9':
-  ensure => present,
-  source => 'https://get.docker.io/gpg',
+apt::key { '58118E89F3A912897C070ADBF76221572C52609D':
+  server => 'hkp://p80.pool.sks-keyservers.net:80',
 }->
 apt::source { 'docker':
   ensure   => present,
-  location => 'http://get.docker.com/ubuntu',
-  release  => 'docker',
+  location => 'https://apt.dockerproject.org/repo',
+  release  => 'debian-jessie',
 }->
-package { 'lxc-docker':
+package { 'docker-engine':
   ensure => latest,
+}->
+# Remove old Docker
+package { 'lxc-docker':
+  ensure => absent,
+}->
+apt::key { '36A1D7869245C8950F966E92D8576A8BA88D21E9':
+  ensure => absent,
 }
