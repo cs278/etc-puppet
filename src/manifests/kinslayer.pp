@@ -128,7 +128,8 @@ package { 'mysql-client':
 
 # Node
 class { 'nodejs':
-  repo_url_suffix => '5.x',
+  nodejs_package_ensure => latest,
+  repo_url_suffix       => '5.x',
 }->
 package { 'bower':
   ensure   => 'present',
