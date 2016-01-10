@@ -69,6 +69,9 @@ package { 'sshfs':
 # Useful to have around but atom packages sometimes need it too.
 package { 'make':
   ensure => latest,
+}->
+package { 'build-essential':
+  ensure => latest,
 }
 
 # PHP
