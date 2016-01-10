@@ -95,6 +95,16 @@ package { 'php5-xdebug':
 }->
 package { 'php5-intl':
   ensure => latest,
+}->
+file { '/etc/php5/cli/conf.d/timezone.ini':
+  ensure  => file,
+  mode    => '0644',
+  owner   => 'root',
+  group   => 0,
+  content => sprintf(
+    'date.timezone=%s',
+    generate('/bin/cat', '/etc/timezone')
+  ),
 }
 
 # MySQL
