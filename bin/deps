@@ -12,6 +12,6 @@ installed() {
 	puppet module list --modulepath vendor | grep "$1" >/dev/null
 }
 
-mod puppetlabs-stdlib "4.6.0"
-mod puppetlabs-apt "2.1.0"
-mod puppet-nodejs "1.1.0"
+mod puppetlabs-stdlib "4.10.0"
+mod puppetlabs-apt "2.2.1"
+mod puppet-nodejs "1.3.0"
