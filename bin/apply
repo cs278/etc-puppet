@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 if ! command puppet >/dev/null 2>&1; then
   echo "Puppet not available, installing."
 
