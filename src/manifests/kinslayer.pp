@@ -18,10 +18,10 @@ package { 'google-chrome-stable':
   ensure => latest,
 }
 
-# Atom 1.2.4
+# Atom 1.3.3
 dpkgdeb::package { 'atom':
-  url      => 'https://github.com/atom/atom/releases/download/v1.2.4/atom-amd64.deb',
-  checksum => 'a524aba6d32267910b7cdcaa246a9e1a5872d665',
+  url      => 'https://github.com/atom/atom/releases/download/v1.3.3/atom-amd64.deb',
+  checksum => 'cbd54ce017500d9b82669ef706b8047756336f2b',
 }->
 package { 'puppet-lint':
   ensure   => 'latest',
