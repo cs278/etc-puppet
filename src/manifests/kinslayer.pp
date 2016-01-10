@@ -92,6 +92,9 @@ package { 'php5-readline':
 }->
 package { 'php5-xdebug':
   ensure => latest,
+}->
+package { 'php5-intl':
+  ensure => latest,
 }
 
 # MySQL
