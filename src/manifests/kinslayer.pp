@@ -22,6 +22,10 @@ package { 'google-chrome-stable':
 dpkgdeb::package { 'atom':
   url      => 'https://github.com/atom/atom/releases/download/v1.2.4/atom-amd64.deb',
   checksum => 'a524aba6d32267910b7cdcaa246a9e1a5872d665',
+}->
+package { 'puppet-lint':
+  ensure   => 'latest',
+  provider => 'gem',
 }
 
 # Fonts
