@@ -34,6 +34,9 @@ package { 'fonts-inconsolata':
 }->
 package { 'fonts-droid':
   ensure => latest,
+}->
+package { 'fonts-roboto':
+  ensure => latest,
 }
 
 # Theming
