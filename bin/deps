@@ -1,7 +1,15 @@
 #!/bin/sh
 
 mod() {
-	puppet module install --target-dir="vendor" --version="$2" "$1"
+	if installed "$1"; then
+		puppet module upgrade --modulepath vendor --version="$2" "$1"
+	else
+		puppet module install --target-dir="vendor" --version="$2" "$1"
+	fi
+}
+
+installed() {
+	puppet module list --modulepath vendor | grep "$1" >/dev/null
 }
 
 mod puppetlabs-stdlib "4.6.0"
