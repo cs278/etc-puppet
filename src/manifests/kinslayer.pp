@@ -105,6 +105,17 @@ file { '/etc/php5/cli/conf.d/timezone.ini':
     'date.timezone=%s',
     generate('/bin/cat', '/etc/timezone')
   ),
+}->
+file { '/etc/php5/cli/conf.d/20-xdebug.ini':
+  ensure => absent,
+}->
+# Wrapper to launch PHP with xdebug enabled
+file { '/usr/local/bin/php-xdebug':
+  ensure  => file,
+  mode    => '0755',
+  owner   => 'root',
+  group   => 0,
+  content => "#!/bin/sh\n\nexec php -dzend_extension=xdebug.so \"$@\"\n",
 }
 
 # MySQL
