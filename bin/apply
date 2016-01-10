@@ -12,7 +12,7 @@ fi
 
 diff=$(( `date +%s` - `find /var/lib/apt/lists/ \( -name "*_Release" -or -name "*_InRelease" \) -type f -printf "%C@\0" | sort --zero-terminated | cut -d $'\0' -f1 | cut -d. -f1` ))
 
-if [ $diff > 60 ]; then
+if [ $diff -gt 60 ]; then
   echo "Updating APT repositories..."
   apt-get update -qq
 fi
