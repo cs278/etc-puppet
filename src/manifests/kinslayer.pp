@@ -48,6 +48,9 @@ package { 'gtk2-engines-murrine':
 }
 
 # Utilities
+package { 'curl':
+  ensure => latest,
+}->
 package { 'htop':
   ensure => latest,
 }->
