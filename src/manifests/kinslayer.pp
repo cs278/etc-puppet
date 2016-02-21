@@ -76,11 +76,18 @@ package { 'pwgen':
 package { 'sshfs':
   ensure => latest,
 }->
+package { 'parallel':
+  ensure => latest,
+}->
 # Useful to have around but atom packages sometimes need it too.
 package { 'make':
   ensure => latest,
 }->
 package { 'build-essential':
+  ensure => latest,
+}
+->
+package { 'smartmontools':
   ensure => latest,
 }
 
