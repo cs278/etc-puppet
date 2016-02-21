@@ -142,6 +142,32 @@ file { '/usr/local/bin/php-xdebug':
   content => "#!/bin/sh\n\nexec php -dzend_extension=xdebug.so \"$@\"\n",
 }
 
+# PHP build dependencies
+package { 'libxml2-dev':
+  ensure => present,
+}->
+package { 'libssl-dev':
+  ensure => present,
+}->
+package { 'libcurl4-openssl-dev':
+  ensure => present,
+}->
+package { 'libjpeg-dev':
+  ensure => present,
+}->
+package { 'libmcrypt-dev':
+  ensure => present,
+}->
+package { 'libreadline-dev':
+  ensure => present,
+}->
+package { 'libtidy-dev':
+  ensure => present,
+}->
+package { 'libxslt1-dev':
+  ensure => present,
+}->
+
 # MySQL
 package { 'mysql-client':
   ensure => latest,
