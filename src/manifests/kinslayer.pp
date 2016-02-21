@@ -123,6 +123,13 @@ file { '/etc/php5/cli/conf.d/timezone.ini':
     generate('/bin/cat', '/etc/timezone')
   ),
 }->
+file { '/etc/php5/cli/conf.d/90-phar.ini':
+  ensure  => file,
+  mode    => '0644',
+  owner   => 'root',
+  group   => 0,
+  content => "phar.readonly=0\n",
+}->
 file { '/etc/php5/cli/conf.d/20-xdebug.ini':
   ensure => absent,
 }->
