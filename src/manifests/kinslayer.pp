@@ -51,6 +51,11 @@ package { 'gtk2-engines-murrine':
   ensure => latest,
 }
 
+# Desktop applications
+package { 'vlc':
+  ensure => latest,
+}
+
 # Utilities
 package { 'curl':
   ensure => latest,
