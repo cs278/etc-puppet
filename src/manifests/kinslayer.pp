@@ -3,6 +3,11 @@ Exec {
 }
 
 class { 'apt':
+}->
+apt::source { 'backports':
+  location => 'http://ftp.uk.debian.org/debian',
+  release  => 'jessie-backports',
+  repos    => 'main',
 }
 
 class { '::ntp':
@@ -54,6 +59,19 @@ package { 'gtk2-engines-murrine':
 # Desktop applications
 package { 'vlc':
   ensure => latest,
+}
+
+# iPlayer Download
+package { 'ffmpeg':
+  ensure  => present,
+  require => Apt::Source['backports'],
+}->
+package { ['libxml-simple-perl', 'rtmpdump']:
+  ensure => present,
+}->
+dpkgdeb::package { 'get_iplayer':
+  url      => 'http://ftp.uk.debian.org/debian/pool/main/g/get-iplayer/get-iplayer_2.94-1_all.deb',
+  checksum => 'cadab9160f66ec113ffb44b4ecf63aac011c8362',
 }
 
 # Utilities
