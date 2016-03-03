@@ -111,6 +111,9 @@ package { 'build-essential':
 }->
 package { 'smartmontools':
   ensure => latest,
+}->
+package { 'gddrescue':
+  ensure => latest,
 }
 
 # PHP
