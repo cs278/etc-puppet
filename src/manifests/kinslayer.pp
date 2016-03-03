@@ -108,8 +108,7 @@ package { 'make':
 }->
 package { 'build-essential':
   ensure => latest,
-}
-->
+}->
 package { 'smartmontools':
   ensure => latest,
 }
