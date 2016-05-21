@@ -75,6 +75,12 @@ dpkgdeb::package { 'get_iplayer':
 }
 
 # Utilities
+package { 'rzip':
+  ensure => latest,
+}->
+package { 'pv':
+  ensure => latest,
+}->
 package { 'curl':
   ensure => latest,
 }->
