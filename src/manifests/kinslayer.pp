@@ -74,6 +74,19 @@ dpkgdeb::package { 'get_iplayer':
   checksum => 'cadab9160f66ec113ffb44b4ecf63aac011c8362',
 }
 
+# Control HDD spin down
+package { 'hdparm':
+  ensure => latest,
+}->
+file { '/etc/udev/rules.d/80-hdparm.rules':
+  ensure  => file,
+  # -M 128 Set acoustic management to quiet
+  # -B 127 Set APM to go to standby as much as possible
+  # -S 12  Enter standby after 60 seconds
+  # -Y     Immediately enter sleep mode
+  content => "ACTION==\"add|change\", KERNEL==\"sd[a-z]\", ATTR{queue/rotational}==\"1\", RUN+=\"/sbin/hdparm -M 128 -B 127 -S 12 -Y /dev/%k\"\n",
+}
+
 # Utilities
 package { 'lshw':
   ensure => latest,
