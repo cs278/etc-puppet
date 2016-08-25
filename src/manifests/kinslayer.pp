@@ -75,6 +75,9 @@ dpkgdeb::package { 'get_iplayer':
 }
 
 # Utilities
+package { 'lshw':
+  ensure => latest,
+}->
 package { 'rzip':
   ensure => latest,
 }->
