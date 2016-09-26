@@ -27,10 +27,10 @@ package { 'google-chrome-stable':
   ensure => latest,
 }
 
-# Atom 1.9.9
+# Atom 1.10.2
 dpkgdeb::package { 'atom':
-  url      => 'https://github.com/atom/atom/releases/download/v1.9.9/atom-amd64.deb',
-  checksum => '017fc779060782b1c5c75c72304f56042f3eb027',
+  url      => 'https://github.com/atom/atom/releases/download/v1.10.2/atom-amd64.deb',
+  checksum => 'a2ceb1d913fa43bc7bd0c934f5b5bbb66f371ad7',
 }->
 package { 'puppet-lint':
   ensure   => 'latest',
