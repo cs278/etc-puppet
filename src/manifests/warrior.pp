@@ -18,10 +18,14 @@ package { 'google-chrome-stable':
   ensure => latest,
 }
 
-# Atom 1.0.2
+# Atom 1.10.2
 dpkgdeb::package { 'atom':
-  url      => 'https://github.com/atom/atom/releases/download/v1.0.2/atom-amd64.deb',
-  checksum => '245f8a29611b2c99e119e7fbefa577aaac4c6df8',
+  url      => 'https://github.com/atom/atom/releases/download/v1.10.2/atom-amd64.deb',
+  checksum => 'a2ceb1d913fa43bc7bd0c934f5b5bbb66f371ad7',
+}->
+package { 'puppet-lint':
+  ensure   => 'latest',
+  provider => 'gem',
 }
 
 # Fonts
